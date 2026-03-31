@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router";
 import { Button } from "./ui/button";
 import { Menu, X, Phone, Calendar } from "lucide-react";
 import { useState } from "react";
-import logo from "figma:asset/674b34251838c945db6ae67257852cc2d831f5e7.png";
+import logo from "../../assets/674b34251838c945db6ae67257852cc2d831f5e7.png";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -100,7 +100,10 @@ export function Header() {
               ))}
               <div className="flex flex-col space-y-2 pt-4">
                 <Button variant="outline" size="sm" asChild>
-                  <a href="tel:876-555-0123" className="flex items-center justify-center gap-2">
+                  <a
+                    href="tel:876-555-0123"
+                    className="flex items-center justify-center gap-2"
+                  >
                     <Phone className="w-4 h-4" />
                     Call Us
                   </a>

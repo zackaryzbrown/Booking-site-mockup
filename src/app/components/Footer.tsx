@@ -1,6 +1,13 @@
 import { Link } from "react-router";
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
-import logo from "figma:asset/674b34251838c945db6ae67257852cc2d831f5e7.png";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Instagram,
+  Twitter,
+} from "lucide-react";
+import logo from "../../assets/674b34251838c945db6ae67257852cc2d831f5e7.png";
 
 export function Footer() {
   return (
@@ -9,9 +16,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
-            <img src={logo} alt="A Child's Perspective" className="h-12 mb-4 brightness-0 invert" />
+            <img
+              src={logo}
+              alt="A Child's Perspective"
+              className="h-12 mb-4 brightness-0 invert"
+            />
             <p className="text-gray-300 mb-4">
-              Guiding children through medical experiences with compassion, expertise, and care.
+              Guiding children through medical experiences with compassion,
+              expertise, and care.
             </p>
             <div className="flex space-x-4">
               <a
@@ -40,22 +52,34 @@ export function Footer() {
             <h3 className="mb-4 text-[#CE5374]">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-white transition-colors">
+                <Link
+                  to="/"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
+                <Link
+                  to="/services"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">
+                <Link
+                  to="/about"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">
+                <Link
+                  to="/contact"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Contact
                 </Link>
               </li>
@@ -68,13 +92,19 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-gray-300">
                 <Phone className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <a href="tel:876-555-0123" className="hover:text-white transition-colors">
+                <a
+                  href="tel:876-555-0123"
+                  className="hover:text-white transition-colors"
+                >
                   (876) 555-0123
                 </a>
               </li>
               <li className="flex items-start gap-2 text-gray-300">
                 <Mail className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <a href="mailto:info@achildsperspective.com" className="hover:text-white transition-colors">
+                <a
+                  href="mailto:info@achildsperspective.com"
+                  className="hover:text-white transition-colors"
+                >
                   info@achildsperspective.com
                 </a>
               </li>
@@ -87,7 +117,10 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} A Child's Perspective. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} A Child's Perspective. All rights
+            reserved.
+          </p>
         </div>
       </div>
     </footer>
