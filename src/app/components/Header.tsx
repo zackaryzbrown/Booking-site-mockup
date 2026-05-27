@@ -10,9 +10,9 @@ export function Header() {
 
   const navItems = [
     { path: "/", label: "Home" },
-    { path: "/services", label: "Services" },
     { path: "/about", label: "About" },
-    { path: "/contact", label: "Contact" },
+    { path: "/services", label: "Services" },
+    { path: "/contact", label: "Location" },
   ];
 
   const isActive = (path: string) => {
@@ -35,7 +35,7 @@ export function Header() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`transition-colors ${
+                className={`transition-colors font-medium ${
                   isActive(item.path)
                     ? "text-[#5D17EA]"
                     : "text-[#111813] hover:text-[#5D17EA]"
@@ -48,21 +48,17 @@ export function Header() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm" asChild>
-              <a href="tel:876-555-0123" className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                Call Us
-              </a>
-            </Button>
-            <Button size="sm" asChild>
+            <Button
+              size="sm"
+              asChild
+              className="bg-[#5D17EA] hover:bg-[#5D17EA]/90"
+            >
               <a
                 href="https://achildsperspective-jm.clientsecure.me/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2"
               >
-                <Calendar className="w-4 h-4" />
-                Book Now
+                Request appointment
               </a>
             </Button>
           </div>

@@ -1,115 +1,53 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
 import { Button } from "../ui/button";
-import { 
-  Stethoscope, 
-  Syringe, 
-  Activity, 
-  Brain, 
-  Apple, 
-  Heart,
-  Baby,
-  Smile,
-  Calendar
-} from "lucide-react";
 
 export function Services() {
   const services = [
+    "Child or Adolescent",
+    "Sibling Support",
+    "Parental Support",
+    "Medical Procedure Education & Prep",
+    "Coping Skills",
+    "Acute and Chronic Illness",
+    "Trauma",
+    "Behavioral Issues",
+    "Grief",
+    "Anticipatory Grief",
+    "Supervision Anxiety",
+    "Peer Relationships",
+    "School Re-Entry",
+  ];
+
+  const approaches = [
+    "Age Appropriate Intervention",
+    "Developmentally Appropriate Intervention",
+    "Medical Play",
+    "Normalization",
+    "Psychoeducation",
+    "Procedural Preparation",
+    "Therapeutic Art Activities",
+    "Sandtwork",
+    "Behavior Modification",
+    "Compassion Focused",
+    "Cognitive Behavioral",
+    "Therapeutic Puppetry",
+  ];
+
+  const fees = [
+    { service: "Initial Phone Consultation", price: "$0" },
     {
-      icon: Stethoscope,
-      title: "Well-Child Visits",
-      description: "Comprehensive check-ups to monitor your child's growth, development, and overall health at every stage.",
-      features: [
-        "Physical examinations",
-        "Growth tracking",
-        "Developmental milestones assessment",
-        "Parent education and guidance",
-      ],
-      color: "#5D17EA",
+      service: "30 minute Individual Session - Child Assessment",
+      price: "$85",
     },
-    {
-      icon: Syringe,
-      title: "Immunizations",
-      description: "Complete vaccination services following recommended schedules to protect your child from preventable diseases.",
-      features: [
-        "Age-appropriate vaccines",
-        "Travel immunizations",
-        "Vaccine education",
-        "Immunization records",
-      ],
-      color: "#CE5374",
-    },
-    {
-      icon: Activity,
-      title: "Sick Visits",
-      description: "Prompt diagnosis and treatment for acute illnesses and injuries with same-day appointments available.",
-      features: [
-        "Common childhood illnesses",
-        "Infections and injuries",
-        "Chronic condition management",
-        "Follow-up care",
-      ],
-      color: "#5F1F30",
-    },
-    {
-      icon: Brain,
-      title: "Behavioral Health",
-      description: "Assessment and support for developmental, behavioral, and mental health concerns.",
-      features: [
-        "ADHD evaluations",
-        "Anxiety and depression screening",
-        "Behavioral counseling",
-        "Developmental assessments",
-      ],
-      color: "#5D17EA",
-    },
-    {
-      icon: Apple,
-      title: "Nutrition Counseling",
-      description: "Expert guidance on nutrition, feeding issues, and healthy eating habits for growing children.",
-      features: [
-        "Weight management",
-        "Feeding difficulties",
-        "Food allergies",
-        "Healthy eating plans",
-      ],
-      color: "#CE5374",
-    },
-    {
-      icon: Heart,
-      title: "Chronic Care",
-      description: "Ongoing management and support for children with chronic health conditions.",
-      features: [
-        "Asthma management",
-        "Diabetes care",
-        "Allergy treatment",
-        "Coordinated care plans",
-      ],
-      color: "#5F1F30",
-    },
-    {
-      icon: Baby,
-      title: "Newborn Care",
-      description: "Specialized care for newborns including first exams, feeding support, and newborn screenings.",
-      features: [
-        "First well-baby visit",
-        "Breastfeeding support",
-        "Newborn screenings",
-        "Jaundice monitoring",
-      ],
-      color: "#5D17EA",
-    },
-    {
-      icon: Smile,
-      title: "Preventive Care",
-      description: "Proactive health maintenance including screenings, health education, and preventive counseling.",
-      features: [
-        "Vision and hearing screenings",
-        "Lead testing",
-        "Health education",
-        "Safety counseling",
-      ],
-      color: "#CE5374",
-    },
+    { service: "1 hour Single Session - Child or Caregiver", price: "$145" },
+    { service: "1 hour Single Session - Paired Caregiver", price: "$145" },
+    { service: "1 hour Group Session - Paired Caregiver", price: "$185" },
   ];
 
   return (
@@ -117,10 +55,10 @@ export function Services() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-[#5D17EA] to-[#CE5374] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl mb-6">Our Services</h1>
+          <h1 className="text-4xl sm:text-5xl font-bold mb-6">SERVICES</h1>
           <p className="text-lg sm:text-xl max-w-3xl mx-auto opacity-90">
-            Comprehensive pediatric care designed to support your child's health and development 
-            from infancy through adolescence.
+            Comprehensive child life specialist services designed to support
+            children, teens, and families through medical experiences.
           </p>
         </div>
       </section>
@@ -128,103 +66,96 @@ export function Services() {
       {/* Services Grid */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <Card key={index} className="border-2 hover:border-[#5D17EA] transition-all hover:shadow-xl">
-                  <CardHeader>
-                    <div
-                      className="w-16 h-16 rounded-full flex items-center justify-center mb-4"
-                      style={{ backgroundColor: `${service.color}15` }}
-                    >
-                      <Icon className="w-8 h-8" style={{ color: service.color }} />
-                    </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                    <CardDescription className="text-base">{service.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start gap-2 text-sm text-gray-700">
-                          <span className="text-[#5D17EA] mt-1">•</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              );
-            })}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="bg-[#5D17EA] text-white px-6 py-4 rounded-lg text-center font-medium hover:bg-[#5D17EA]/90 transition-colors"
+              >
+                {service}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Additional Services */}
-      <section className="py-20 bg-[#DDF0FF]">
+      {/* Approaches Section */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl mb-4 text-[#111813]">Additional Services</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We also offer specialized services to meet your family's unique needs.
-            </p>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center text-[#111813]">
+            APPROACHES
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {approaches.map((approach, index) => (
+              <div
+                key={index}
+                className="bg-white border-2 border-gray-200 px-6 py-4 rounded-lg text-center hover:border-[#5D17EA] transition-colors"
+              >
+                {approach}
+              </div>
+            ))}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card>
-              <CardHeader>
-                <CardTitle>Telemedicine</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700">
-                  Virtual consultations for non-emergency concerns, follow-up appointments, 
-                  and medical advice from the comfort of your home.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>After-Hours Care</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700">
-                  Extended hours and on-call support for urgent medical concerns outside 
-                  regular office hours.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>School & Sports Physicals</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700">
-                  Complete physical examinations required for school enrollment, 
-                  sports participation, and camp attendance.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+        </div>
+      </section>
+
+      {/* Fees Section */}
+      <section className="py-20 bg-[#5D17EA] text-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center">
+            FEES
+          </h2>
+          <Card className="bg-white/10 border-white/20 backdrop-blur">
+            <CardContent className="p-0">
+              <div className="divide-y divide-white/20">
+                {fees.map((fee, index) => (
+                  <div
+                    key={index}
+                    className="flex justify-between items-center px-6 sm:px-8 py-6 hover:bg-white/5 transition-colors"
+                  >
+                    <span className="text-lg font-medium">{fee.service}</span>
+                    <span className="text-2xl font-bold">{fee.price}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl mb-6 text-[#111813]">Need to Schedule an Appointment?</h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Our team is ready to provide the care your child deserves. Book your appointment today.
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[#111813]">
+            Ready to Schedule?
+          </h2>
+          <p className="text-lg text-gray-700 mb-8">
+            Contact us today to learn more about our services or to schedule an
+            appointment.
           </p>
-          <Button size="lg" asChild className="text-lg">
-            <a
-              href="https://achildsperspective-jm.clientsecure.me/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              asChild
+              className="text-lg bg-teal-600 hover:bg-teal-700"
             >
-              <Calendar className="w-5 h-5" />
-              Book Appointment
-            </a>
-          </Button>
+              <a
+                href="https://achildsperspective-jm.clientsecure.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Client Portal
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" asChild className="text-lg">
+              <a
+                href="https://achildsperspective-jm.clientsecure.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Request Appointment
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
     </div>

@@ -16,14 +16,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
-            <img
-              src={logo}
-              alt="A Child's Perspective"
-              className="h-12 mb-4 brightness-0 invert"
-            />
+            <div className="inline-block bg-white px-4 py-2 rounded-lg mb-4">
+              <img src={logo} alt="A Child's Perspective" className="h-12" />
+            </div>
             <p className="text-gray-300 mb-4">
-              Guiding children through medical experiences with compassion,
-              expertise, and care.
+              Licensed Child Life Specialists guiding children, teens, and
+              families through medical experiences with compassion and
+              expertise.
             </p>
             <div className="flex space-x-4">
               <a
@@ -91,15 +90,6 @@ export function Footer() {
             <h3 className="mb-4 text-[#CE5374]">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-gray-300">
-                <Phone className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <a
-                  href="tel:876-555-0123"
-                  className="hover:text-white transition-colors"
-                >
-                  (876) 555-0123
-                </a>
-              </li>
-              <li className="flex items-start gap-2 text-gray-300">
                 <Mail className="w-5 h-5 flex-shrink-0 mt-0.5" />
                 <a
                   href="mailto:info@achildsperspective.com"
@@ -110,7 +100,16 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2 text-gray-300">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <span>Kingston, Jamaica</span>
+                <a
+                  href="https://maps.google.com/?q=1603+28th+St+1100+Boulder+CO+80302"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  <div>Boulder Healing Hub</div>
+                  <div>1603 28th St, #1100</div>
+                  <div>Boulder, CO 80302-2455</div>
+                </a>
               </li>
             </ul>
           </div>
