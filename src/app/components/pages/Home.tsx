@@ -118,7 +118,7 @@ export function Home() {
               <p className="mt-7 max-w-[58ch] text-[1.12rem] text-[color:var(--ink-soft)] rise rise-3">
                 Child life support for children, teens, siblings, and caregivers
                 navigating diagnoses, procedures, hospital stays, and the long
-                stretches in between. Honest, developmentally-tuned care ,
+                stretches in between. Honest, developmentally-tuned care,
                 designed around the way real families actually feel.
               </p>
 
@@ -174,7 +174,7 @@ export function Home() {
               </h2>
             </div>
             <p className="max-w-[42ch] text-[color:var(--ink-soft)]">
-              A medical experience doesn’t happen to one person, it ripples
+              A medical experience doesn't happen to one person, it ripples
               through a whole family. Our sessions are shaped around the person
               in front of us.
             </p>
