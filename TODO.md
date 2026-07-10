@@ -1,11 +1,9 @@
 # TODO
-- [ ] Contact email help.
 - [ ] Padding on all hero pages
 - [ ] Icons
-- [ ] Images on all pages
-- [ ] ACP Brochure content
+- [ ] Images on all pages //profiles img done
+- [ ] ACP Brochure content // check
 - [ ] Booking page for two people two links else email
 - [ ] Logo edit
-- [ ] Cerified instad of Licensed Child Life Specialists
-- [ ] Bios
-- [ ] servises
+- [ ] Bios // find content
+- [ ] servises // find content

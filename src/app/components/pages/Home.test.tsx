@@ -32,7 +32,7 @@ describe("Home", () => {
     ).toHaveAttribute("href", "/services");
 
     expect(
-      screen.getByText("Licensed Child Life Specialists"),
+      screen.getByText("Certified Child Life Specialists"),
     ).toBeInTheDocument();
   });
 });

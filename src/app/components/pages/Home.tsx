@@ -15,7 +15,7 @@ import {
 const BOOKING_URL = "https://achildsperspective-jm.clientsecure.me/";
 
 const trust = [
-  { icon: GraduationCap, label: "Licensed Child Life Specialists" },
+  { icon: GraduationCap, label: "Certified Child Life Specialists" },
   { icon: Video, label: "Telehealth Available" },
   { icon: MapPin, label: "Serving Colorado Families" },
 ];
@@ -158,6 +158,39 @@ export function Home() {
             <div className="lg:col-span-5 relative rise rise-3">
               <HeroVisual />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT IS CHILD LIFE */}
+      <section className="py-16 lg:py-24 bg-[color:var(--ivory-2)]">
+        <div className="max-w-[900px] mx-auto px-5 sm:px-8 lg:px-12">
+          <div className="text-center mb-10">
+            <p className="eyebrow">What is Child Life?</p>
+            <h2 className="font-display mt-3 max-w-[28ch] mx-auto">
+              A field dedicated to the{" "}
+              <span className="italic-serif text-[color:var(--plum)]">
+                emotional side
+              </span>{" "}
+              of medical care.
+            </h2>
+          </div>
+
+          <div className="warm-card p-8 lg:p-10">
+            <p className="text-[1.05rem] text-[color:var(--ink-soft)] leading-relaxed mb-5">
+              Child Life Specialists are certified medical professionals who
+              help children and families navigate the stress and uncertainty of
+              illness, hospitalization, and medical procedures. Through
+              therapeutic play, developmentally-appropriate preparation, and
+              emotional support, we help normalize difficult experiences and
+              build effective coping strategies.
+            </p>
+            <p className="text-[1.05rem] text-[color:var(--ink-soft)] leading-relaxed">
+              At A Child's Perspective, we bring this expertise into a boutique
+              setting—offering unhurried, personalized sessions that make space
+              for questions, feelings, and the kind of careful attention
+              families deserve.
+            </p>
           </div>
         </div>
       </section>
