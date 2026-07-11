@@ -74,18 +74,18 @@ export function Contact() {
           }}
         />
 
-        <div className="relative max-w-[1240px] mx-auto px-5 sm:px-8 lg:px-12 pt-16 lg:pt-24 pb-12 lg:pb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+        <div className="relative max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-12 pt-4 sm:pt-8 lg:pt-12 pb-6 sm:pb-10 lg:pb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start lg:items-end">
             <div className="lg:col-span-7">
               <p className="eyebrow rise rise-1">Get in touch</p>
-              <h1 className="font-display mt-5 max-w-[20ch] rise rise-2">
+              <h1 className="font-display mt-3 sm:mt-4 md:mt-5 max-w-[20ch] rise rise-2">
                 Reach out{" "}
                 <span className="italic-serif text-[color:var(--plum)]">
                   whenever you&apos;re ready
                 </span>
                 , even just to ask.
               </h1>
-              <p className="mt-7 max-w-[58ch] text-[1.1rem] text-[color:var(--ink-soft)] rise rise-3">
+              <p className="mt-4 sm:mt-5 md:mt-6 max-w-[58ch] text-fluid-lg text-[color:var(--ink-soft)] rise rise-3">
                 You don&apos;t need to have it figured out before contacting us.
                 Tell us what&apos;s going on in your family, and we&apos;ll
                 point you toward the right starting place.

@@ -92,14 +92,14 @@ export function Home() {
           }}
         />
 
-        <div className="relative max-w-[1240px] mx-auto px-5 sm:px-8 lg:px-12 pt-16 lg:pt-24 pb-20 lg:pb-28">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-end">
+        <div className="relative max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-12 pt-4 sm:pt-8 lg:pt-12 pb-8 sm:pb-12 lg:pb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center lg:items-end">
             <div className="lg:col-span-7">
               <p className="eyebrow rise rise-1">
                 A boutique child life practice
               </p>
               <h1
-                className="font-display mt-5 text-[color:var(--plum-ink)] rise rise-2"
+                className="font-display mt-3 sm:mt-4 md:mt-5 text-[color:var(--plum-ink)] rise rise-2"
                 style={{
                   fontWeight: 750,
                   letterSpacing: "-0.04em",
@@ -115,14 +115,14 @@ export function Home() {
                 </span>
                 <br className="hidden sm:block" /> of medical care.
               </h1>
-              <p className="mt-7 max-w-[58ch] text-[1.12rem] text-[color:var(--ink-soft)] rise rise-3">
+              <p className="mt-4 sm:mt-5 md:mt-6 max-w-[58ch] text-fluid-lg text-[color:var(--ink-soft)] rise rise-3">
                 Child life support for children, teens, siblings, and caregivers
                 navigating diagnoses, procedures, hospital stays, and the long
                 stretches in between. Honest, developmentally-tuned care,
                 designed around the way real families actually feel.
               </p>
 
-              <div className="mt-9 flex flex-wrap items-center gap-3 rise rise-4">
+              <div className="mt-5 sm:mt-6 md:mt-7 flex flex-wrap items-center gap-2.5 sm:gap-3 rise rise-4">
                 <a
                   href={BOOKING_URL}
                   target="_blank"
@@ -137,16 +137,16 @@ export function Home() {
                 </Link>
               </div>
 
-              <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-3 rise rise-5">
+              <div className="mt-6 sm:mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 rise rise-5">
                 {trust.map(({ icon: Icon, label }) => (
                   <div
                     key={label}
-                    className="flex items-center gap-3 px-4 py-3 rounded-full bg-white/70 backdrop-blur-sm border border-[color:var(--hairline)]"
+                    className="flex items-center gap-2.5 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-full bg-white/70 backdrop-blur-sm border border-[color:var(--hairline)]"
                   >
-                    <span className="inline-flex w-8 h-8 items-center justify-center rounded-full bg-[color:var(--lavender-2)] text-[color:var(--plum)]">
-                      <Icon className="w-4 h-4" aria-hidden />
+                    <span className="inline-flex w-7 h-7 sm:w-8 sm:h-8 items-center justify-center rounded-full bg-[color:var(--lavender-2)] text-[color:var(--plum)] shrink-0">
+                      <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden />
                     </span>
-                    <span className="text-[0.86rem] text-[color:var(--ink-soft)]">
+                    <span className="text-[0.8rem] sm:text-[0.86rem] text-[color:var(--ink-soft)]">
                       {label}
                     </span>
                   </div>
@@ -155,7 +155,7 @@ export function Home() {
             </div>
 
             {/* Editorial visual card */}
-            <div className="lg:col-span-5 relative rise rise-3">
+            <div className="lg:col-span-5 relative rise rise-3 hidden lg:block">
               <HeroVisual />
             </div>
           </div>
@@ -163,9 +163,9 @@ export function Home() {
       </section>
 
       {/* WHAT IS CHILD LIFE */}
-      <section className="py-16 lg:py-24 bg-[color:var(--ivory-2)]">
-        <div className="max-w-[900px] mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="text-center mb-10">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 bg-[color:var(--ivory-2)]">
+        <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="text-center mb-6 sm:mb-8 md:mb-9">
             <p className="eyebrow">What is Child Life?</p>
             <h2 className="font-display mt-3 max-w-[28ch] mx-auto">
               A field dedicated to the{" "}
@@ -176,8 +176,8 @@ export function Home() {
             </h2>
           </div>
 
-          <div className="warm-card p-8 lg:p-10">
-            <p className="text-[1.05rem] text-[color:var(--ink-soft)] leading-relaxed mb-5">
+          <div className="warm-card p-5 sm:p-7 lg:p-10">
+            <p className="text-fluid text-[color:var(--ink-soft)] leading-relaxed mb-5">
               Child Life Specialists are certified medical professionals who
               help children and families navigate the stress and uncertainty of
               illness, hospitalization, and medical procedures. Through
@@ -185,7 +185,7 @@ export function Home() {
               emotional support, we help normalize difficult experiences and
               build effective coping strategies.
             </p>
-            <p className="text-[1.05rem] text-[color:var(--ink-soft)] leading-relaxed">
+            <p className="text-fluid text-[color:var(--ink-soft)] leading-relaxed">
               At A Child's Perspective, we bring this expertise into a boutique
               setting—offering unhurried, personalized sessions that make space
               for questions, feelings, and the kind of careful attention
@@ -196,9 +196,9 @@ export function Home() {
       </section>
 
       {/* WHO WE HELP */}
-      <section className="relative py-24 lg:py-32">
-        <div className="max-w-[1240px] mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+      <section className="relative py-12 sm:py-16 md:py-20 lg:py-28">
+        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 sm:gap-5 md:gap-6 mb-8 sm:mb-10 md:mb-12">
             <div>
               <p className="eyebrow">Who we help</p>
               <h2 className="font-display mt-3 max-w-[18ch]">
@@ -206,34 +206,33 @@ export function Home() {
                 <span className="italic-serif">person</span> in the room.
               </h2>
             </div>
-            <p className="max-w-[42ch] text-[color:var(--ink-soft)]">
+            <p className="max-w-[42ch] text-fluid text-[color:var(--ink-soft)]">
               A medical experience doesn't happen to one person, it ripples
               through a whole family. Our sessions are shaped around the person
               in front of us.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {whoWeHelp.map((item, i) => (
               <article
                 key={item.title}
-                className="group relative warm-card p-7 flex flex-col gap-4 transition-transform duration-300 hover:-translate-y-1"
-                style={{ marginTop: i % 2 === 1 ? "1.5rem" : 0 }}
+                className={`group relative warm-card p-5 sm:p-6 lg:p-7 flex flex-col gap-3 sm:gap-4 transition-transform duration-300 hover:-translate-y-1 ${i % 2 === 1 ? 'sm:mt-6' : ''}`}
               >
                 <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center"
                   style={{ background: item.accent }}
                 >
                   <Heart
-                    className="w-6 h-6 text-[color:var(--plum)]"
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-[color:var(--plum)]"
                     aria-hidden
                   />
                 </div>
                 <div>
-                  <h3 className="font-display text-[1.5rem]">{item.title}</h3>
+                  <h3 className="font-display text-[1.35rem] sm:text-[1.5rem]">{item.title}</h3>
                   <p className="eyebrow mt-1">{item.note}</p>
                 </div>
-                <p className="text-[0.97rem] text-[color:var(--ink-soft)] leading-relaxed">
+                <p className="text-fluid-sm text-[color:var(--ink-soft)] leading-relaxed">
                   {item.body}
                 </p>
               </article>

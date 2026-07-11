@@ -87,16 +87,16 @@ export function About() {
             opacity: 0.5,
           }}
         />
-        <div className="relative max-w-[1100px] mx-auto px-5 sm:px-8 lg:px-12 pt-16 lg:pt-24 pb-12 lg:pb-20">
+        <div className="relative max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-12 pt-4 sm:pt-8 lg:pt-12 pb-6 sm:pb-10 lg:pb-14">
           <p className="eyebrow rise rise-1">About the practice</p>
-          <h1 className="font-display mt-5 max-w-[22ch] rise rise-2">
+          <h1 className="font-display mt-3 sm:mt-4 md:mt-5 max-w-[22ch] rise rise-2">
             Two specialists.{" "}
             <span className="italic-serif text-[color:var(--plum)]">
               One quiet idea:
             </span>{" "}
             medical care should feel human.
           </h1>
-          <p className="mt-7 max-w-[60ch] text-[1.1rem] text-[color:var(--ink-soft)] rise rise-3">
+          <p className="mt-4 sm:mt-5 md:mt-6 max-w-[60ch] text-fluid-lg text-[color:var(--ink-soft)] rise rise-3">
             A Child&apos;s Perspective was started by two Certified Child Life
             Specialists who kept noticing the same gap, families doing brave,
             complicated medical things without anyone helping them prepare
@@ -106,9 +106,9 @@ export function About() {
       </section>
 
       {/* WHAT IS CHILD LIFE - Professional Description */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-[900px] mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="text-center mb-10">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-24 bg-white">
+        <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="text-center mb-6 sm:mb-8 md:mb-10">
             <p className="eyebrow flex items-center justify-center gap-2">
               <GraduationCap className="w-3.5 h-3.5" aria-hidden />
               What is Child Life?

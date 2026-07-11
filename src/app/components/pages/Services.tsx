@@ -81,12 +81,12 @@ export function Services() {
       <section className="relative">
         <div className="blob" style={{ width: 460, height: 460, top: -120, right: -120, background: "var(--sage-soft)" }} />
         <div className="blob" style={{ width: 380, height: 380, top: 140, left: -140, background: "var(--mauve-soft)", opacity: 0.55 }} />
-        <div className="relative max-w-[1100px] mx-auto px-5 sm:px-8 lg:px-12 pt-16 lg:pt-24 pb-12 lg:pb-20">
+        <div className="relative max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-12 pt-4 sm:pt-8 lg:pt-12 pb-6 sm:pb-10 lg:pb-14">
           <p className="eyebrow rise rise-1">What we offer</p>
-          <h1 className="font-display mt-5 max-w-[20ch] rise rise-2">
+          <h1 className="font-display mt-3 sm:mt-4 md:mt-5 max-w-[20ch] rise rise-2">
             Support areas, <span className="italic-serif text-[color:var(--plum)]">grouped&nbsp;clearly</span> so you can find what fits.
           </h1>
-          <p className="mt-7 max-w-[60ch] text-[1.1rem] text-[color:var(--ink-soft)] rise rise-3">
+          <p className="mt-4 sm:mt-5 md:mt-6 max-w-[60ch] text-fluid-lg text-[color:var(--ink-soft)] rise rise-3">
             Every family arrives somewhere different. Below is how our work tends to fall, but every plan is built around the specific child, teen, sibling, or caregiver in front of us.
           </p>
         </div>

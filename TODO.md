@@ -1,5 +1,5 @@
 # TODO
-- [ ] Padding on all hero pages
+- [ ] Padding on all hero pages // Kinda
 - [ ] Icons
 - [ ] Images on all pages //profiles img done
 - [ ] ACP Brochure content // check
