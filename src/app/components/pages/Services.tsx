@@ -1,3 +1,5 @@
+declare module "lucide-react";
+
 import { Link } from "react-router";
 import {
   ArrowUpRight,
@@ -6,10 +8,11 @@ import {
   BookOpenText,
   Sparkles,
   ShieldCheck,
+  HandHeart,
+  Users,
 } from "lucide-react";
 
 const BOOKING_URL = "https://achildsperspective-jm.clientsecure.me/";
-
 
 const groups = [
   {
@@ -36,33 +39,57 @@ const groups = [
     accent: "var(--lavender)",
   },
   {
+    icon: HandHeart,
+    label: "Emotional",
+    title: "Grief, anticipatory grief & trauma",
+    body: "Walking alongside families through loss, life-limiting diagnoses, and the heaviness that doesn’t fit into a clinic visit.",
+    items: [
+      "Grief and anticipatory grief",
+      "Medical trauma and post-procedure processing",
+      "Diagnosis adjustment for children and teens",
+      "Coping with a loved one’s illness",
+    ],
+    accent: "var(--mauve-soft)",
+  },
+  {
+    icon: Users,
+    label: "Family",
+    title: "Sibling & caregiver support",
+    body: "A medical experience is rarely felt by one person. We make space for the whole family system.",
+    items: [
+      "Sibling support sessions",
+      "Parent / caregiver coaching",
+      "Paired caregiver sessions",
+      "Caregiver-only emotional support",
+    ],
+    accent: "var(--sage-soft)",
+  },
+  {
     icon: Palette,
     label: "Approaches",
     title: "How we work in the room",
     body: "Modalities chosen to fit the child, the moment, and the family, not a fixed script.",
     items: [
-      "Age Appropriate Intervention",
-      "Developmentally Appropriate Intervention",
-      "Medical Play",
-      "Therapeutic Play",
-      "Psychoeducation",
-      "Procedural Preparation",
-      "Therapeutic Art Activities",
-      "Breathwork",
-      "Behavior Modification",
-      "Compassion Focused",
-      "Legacy Building",
-      "Therapeutic Puppetry",
+      "Medical play & therapeutic puppetry",
+      "Therapeutic art & sand-based activities",
+      "Psychoeducation & normalization",
+      "Cognitive and compassion-focused strategies",
     ],
-    accent: "var(--mauve-soft)",
+    accent: "var(--ivory-3)",
   },
 ];
 
 const fees = [
   { service: "50 minute Individual Session - Child/Adolescent", price: "$85" },
-  { service: "1 hour Group Session - Child/Adolescent (when offered)", price: "$45" },
+  {
+    service: "1 hour Group Session - Child/Adolescent (when offered)",
+    price: "$45",
+  },
   { service: "50 minute Individual Session - Parent/Caregiver", price: "$85" },
-  { service: "1 hour Group Session - Parent/Caregiver (when offered)", price: "$45" },
+  {
+    service: "1 hour Group Session - Parent/Caregiver (when offered)",
+    price: "$45",
+  },
 ];
 
 export function Services() {
