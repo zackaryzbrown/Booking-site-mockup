@@ -12,8 +12,6 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-const BOOKING_URL = "https://achildsperspective-jm.clientsecure.me/";
-
 const trust = [
   { icon: GraduationCap, label: "Certified Child Life Specialists" },
   { icon: Video, label: "Telehealth Available" },
@@ -123,15 +121,10 @@ export function Home() {
               </p>
 
               <div className="mt-5 sm:mt-6 md:mt-7 flex flex-wrap items-center gap-2.5 sm:gap-3 rise rise-4">
-                <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="pill-btn pill-btn--primary"
-                >
+                <Link to="/book" className="pill-btn pill-btn--primary">
                   Request an appointment
                   <ArrowUpRight className="w-4 h-4" />
-                </a>
+                </Link>
                 <Link to="/services" className="pill-btn pill-btn--ghost">
                   Explore services
                 </Link>
@@ -217,7 +210,7 @@ export function Home() {
             {whoWeHelp.map((item, i) => (
               <article
                 key={item.title}
-                className={`group relative warm-card p-5 sm:p-6 lg:p-7 flex flex-col gap-3 sm:gap-4 transition-transform duration-300 hover:-translate-y-1 ${i % 2 === 1 ? 'sm:mt-6' : ''}`}
+                className={`group relative warm-card p-5 sm:p-6 lg:p-7 flex flex-col gap-3 sm:gap-4 transition-transform duration-300 hover:-translate-y-1 ${i % 2 === 1 ? "sm:mt-6" : ""}`}
               >
                 <div
                   className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center"
@@ -229,7 +222,9 @@ export function Home() {
                   />
                 </div>
                 <div>
-                  <h3 className="font-display text-[1.35rem] sm:text-[1.5rem]">{item.title}</h3>
+                  <h3 className="font-display text-[1.35rem] sm:text-[1.5rem]">
+                    {item.title}
+                  </h3>
                   <p className="eyebrow mt-1">{item.note}</p>
                 </div>
                 <p className="text-fluid-sm text-[color:var(--ink-soft)] leading-relaxed">
@@ -388,15 +383,10 @@ export function Home() {
               </p>
             </div>
             <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-center gap-3">
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="pill-btn pill-btn--ivory"
-              >
+              <Link to="/book" className="pill-btn pill-btn--ivory">
                 Request an appointment
                 <ArrowUpRight className="w-4 h-4" />
-              </a>
+              </Link>
               <span className="text-[color:var(--ivory)]/65 text-[0.85rem] inline-flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4" />
                 Confidential · secure portal

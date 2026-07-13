@@ -17,14 +17,11 @@ describe("Home", () => {
       }),
     ).toBeInTheDocument();
 
+    // General booking CTAs should point to /book, not directly to SimplePractice
     expect(
       screen
         .getAllByRole("link", { name: /request an appointment/i })
-        .some(
-          (link) =>
-            link.getAttribute("href") ===
-            "https://achildsperspective-jm.clientsecure.me/",
-        ),
+        .some((link) => link.getAttribute("href") === "/book"),
     ).toBe(true);
 
     expect(

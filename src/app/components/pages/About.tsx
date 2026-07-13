@@ -4,8 +4,6 @@ import { ImageWithFallback } from "../figma/ImageWithFallback";
 import jennyImage from "../../../assets/7C9125AF-6B74-4A26-9E52-A5A5FD54BF23 2.jpeg";
 import courtneyImage from "../../../assets/3R7A9716_1253.JPG";
 
-const BOOKING_URL = "https://achildsperspective-jm.clientsecure.me/";
-
 const values = [
   {
     title: "Developmentally tuned",
@@ -34,29 +32,34 @@ const founders = [
     image: jennyImage,
     credentials: [
       "Certified Child Life Specialist (CCLS)",
-      "Years of community clinic experience in Lafayette, CO",
-      "Specializes in coping plans, procedural prep, and caregiver coaching",
+      "Master's degree in Counseling · Bachelor's degree in Psychology",
+      "10 years experience at Rainbow Babies and Children's Hospital, Cleveland, Ohio",
+      "Licensed Professional Counselor (Ohio)",
+      "2 years experience in therapeutic puppetry with hospitalized children",
+      "Support group facilitator for children with caregivers facing cancer diagnoses",
     ],
     bio: [
-      "Jenny grew up in Colorado in a big family, and discovered the field of child life as a teenager, at the same time her mother was navigating a long-term diagnosis. That early experience of being a kid trying to make sense of a grown-up medical world shapes everything about how she shows up today.",
-      "She is patient, grounded, and unusually good at translating clinical language into something a child can actually hold. Parents often describe sessions with her as ‘the first time someone slowed down long enough to really explain.’",
+      "Jenny has a master's degree in counseling and a bachelor's degree in psychology. She is currently facilitating support groups for children with a caregiver with a cancer diagnosis as well as working per diem at CHC. She has 10 years' experience working as a Child Life Specialist at Rainbow Babies and Children's Hospital in Cleveland, Ohio, including 2 years' experience utilizing therapeutic puppetry with hospitalized children.",
+      "She worked in an inpatient mental health institution as a therapist for a year while receiving her license as a professional counselor in Ohio. She is passionate about finding creative and individualistic ways to help children through their medical experiences.",
     ],
   },
   {
     initials: "C",
     name: "Courtney",
-    role: "Certified Child Life Specialist, M.S. · Co-founder",
+    role: "Certified Child Life Specialist, M.Ed. · Co-founder",
     hue: "var(--sage-soft)",
     image: courtneyImage,
     credentials: [
       "Certified Child Life Specialist (CCLS)",
-      "M.S. in Human Relations · B.S. in Child Development & Family Studies · B.A. in Psychology",
-      "10+ years bedside experience at a major pediatric hospital",
-      "Group facilitator for children, teens, and caregivers living with chronic diagnoses",
+      "M.Ed. in Human Relations · B.S. in Child Development & Family Studies · B.A. in Psychology",
+      "15+ years experience at major hospitals in Phoenix, AZ",
+      "Support group facilitator for children, teens, and parents/caregivers facing cancer diagnoses",
+      "2+ years of teaching at the collegiate level",
     ],
     bio: [
-      "Courtney spent more than a decade inside one of the country’s busiest pediatric hospitals before joining A Child’s Perspective. She has sat with families through diagnosis days, long admissions, end-of-life care, and the quiet seasons in between.",
-      "She also teaches and mentors the next generation of child life specialists, and brings that same curiosity to her work with families, listening for what isn’t being said, and meeting each family with warmth and clarity.",
+      "Courtney is a Certified Child Life Specialist who helps children and families cope with the stress and uncertainty of acute and chronic illness, injury, trauma, disability, loss, and bereavement. She provides evidence-based, developmentally and psychologically appropriate interventions including therapeutic play, preparation for procedures, and education to reduce fear, anxiety, and pain.",
+      "She holds an M.Ed. in Human Relations, a B.S. in Child Development and Family Studies, and a B.A. in Psychology. She has 15+ years experience working as a Child Life Specialist at major hospitals in the Phoenix, AZ area, which involved closely partnering with community organizations to enhance the supportive environment for her patients. Courtney also facilitates support groups for children, teens, and parents/caregivers for families dealing with a cancer diagnosis, and enjoys teaching and mentoring child life students through practicum, internship, and new-grad experiences.",
+      "Since moving to Colorado in 2022, she has enjoyed working in the non-profit sector and is excited to now serve the Boulder community and surrounding areas with her compassionate and innovative approach to helping children and families navigate their medical journeys. A Child's Perspective was co-founded by Courtney Brown and Jenny Master to serve families in a community-based setting because ongoing support outside of the acute setting is always beneficial and needed for continued and successful coping with medical journeys.",
     ],
   },
 ];
@@ -261,15 +264,10 @@ export function About() {
               </p>
             </div>
             <div className="lg:col-span-5 flex flex-col gap-3 lg:items-end">
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="pill-btn pill-btn--primary"
-              >
+              <Link to="/book" className="pill-btn pill-btn--primary">
                 Request an appointment
                 <ArrowUpRight className="w-4 h-4" />
-              </a>
+              </Link>
               <Link to="/services" className="pill-btn pill-btn--ghost">
                 See services &amp; fees
               </Link>
@@ -296,6 +294,9 @@ function FounderProfileCard({ founder }: { founder: (typeof founders)[0] }) {
           alt={`${founder.name}, Certified Child Life Specialist`}
           className="w-full h-full object-cover object-center"
           style={{ objectPosition: "center 30%" }}
+          loading="lazy"
+          width="800"
+          height="600"
         />
       </div>
 

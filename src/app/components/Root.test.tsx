@@ -22,9 +22,20 @@ describe("Root layout", () => {
 
     render(<RouterProvider router={router} />);
 
+    // Verify skip link for keyboard navigation
     expect(
-      screen.getByRole("link", { name: /a child's perspective, home/i }),
+      screen.getByRole("link", { name: /skip to main content/i }),
     ).toBeInTheDocument();
+
+    // Verify logo/home link
+    expect(
+      screen.getByRole("link", {
+        name: /a child's perspective, return to home/i,
+      }),
+    ).toBeInTheDocument();
+
+    // Verify main content region
+    expect(screen.getByRole("main")).toBeInTheDocument();
 
     expect(screen.getByText("Child page content")).toBeInTheDocument();
 

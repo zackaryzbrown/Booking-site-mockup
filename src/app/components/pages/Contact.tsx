@@ -242,9 +242,11 @@ export function Contact() {
                     id="name"
                     type="text"
                     required
+                    autoComplete="name"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     className="contact-input"
+                    aria-required="true"
                   />
                 </Field>
                 <Field label="Email" id="email">
@@ -252,11 +254,13 @@ export function Contact() {
                     id="email"
                     type="email"
                     required
+                    autoComplete="email"
                     value={form.email}
                     onChange={(e) =>
                       setForm({ ...form, email: e.target.value })
                     }
                     className="contact-input"
+                    aria-required="true"
                   />
                 </Field>
                 <Field

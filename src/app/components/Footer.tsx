@@ -1,11 +1,9 @@
 import { Link } from "react-router";
 import { Mail, MapPin, ArrowUpRight } from "lucide-react";
 
-const BOOKING_URL = "https://achildsperspective-jm.clientsecure.me/";
-
 export function Footer() {
   return (
-    <footer className="relative mt-24 bg-[color:var(--plum-ink)] text-[color:var(--ivory)] overflow-hidden">
+    <footer className="relative mt-16 bg-[color:var(--plum-ink)] text-[color:var(--ivory)] overflow-hidden">
       <div
         className="blob"
         style={{
@@ -28,7 +26,7 @@ export function Footer() {
         }}
       />
 
-      <div className="relative max-w-[1240px] mx-auto px-5 sm:px-8 lg:px-12 pt-20 pb-10">
+      <div className="relative max-w-[1240px] mx-auto px-5 sm:px-8 lg:px-12 pt-16 pb-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr_1fr] gap-12 lg:gap-16">
           <div>
             <p className="eyebrow text-[color:var(--mauve-soft)]">
@@ -44,22 +42,17 @@ export function Footer() {
               <br />
               hardest days.
             </h2>
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pill-btn pill-btn--ivory mt-8"
-            >
+            <Link to="/book" className="pill-btn pill-btn--ivory mt-8">
               Request an appointment
               <ArrowUpRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
 
           <div>
-            <h3 className="eyebrow text-[color:var(--mauve-soft)] mb-5">
+            <h3 className="eyebrow text-[color:var(--ivory)] opacity-80 mb-5">
               Explore
             </h3>
-            <ul className="space-y-3 text-[0.98rem]">
+            <ul className="space-y-3 text-[0.98rem] text-[color:var(--ivory)] opacity-90">
               <li>
                 <Link
                   to="/"
@@ -96,10 +89,10 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="eyebrow text-[color:var(--mauve-soft)] mb-5">
+            <h3 className="eyebrow text-[color:var(--ivory)] opacity-80 mb-5">
               Get in touch
             </h3>
-            <ul className="space-y-4 text-[0.98rem]">
+            <ul className="space-y-4 text-[0.98rem] text-[color:var(--ivory)] opacity-90">
               <li className="flex items-start gap-3">
                 <Mail
                   className="w-4 h-4 mt-1 text-[color:var(--mauve-soft)]"
@@ -117,10 +110,10 @@ export function Footer() {
                   className="w-4 h-4 mt-1 text-[color:var(--mauve-soft)]"
                   aria-hidden
                 />
-                <span className="text-[color:var(--ivory)]/90">
+                <span className="text-[color:var(--ivory)] opacity-90">
                   Telehealth across Colorado
                   <br />
-                  <span className="text-[color:var(--ivory)]/60">
+                  <span className="text-[color:var(--ivory)] opacity-75">
                     Serving children, teens &amp; families
                   </span>
                 </span>
@@ -129,7 +122,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[0.82rem] text-[color:var(--ivory)]/60">
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[0.84rem] text-[color:var(--ivory)] opacity-70">
           <p>
             © {new Date().getFullYear()} A Child&apos;s Perspective. All rights
             reserved.
