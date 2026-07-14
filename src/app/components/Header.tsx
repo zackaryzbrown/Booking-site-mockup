@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import logo from "../../assets/Logo.png";
-import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { path: "/", label: "Home" },
@@ -102,12 +101,7 @@ export function Header() {
             </Link>
           </nav>
 
-          <div className="hidden md:flex items-center gap-2">
-            <ThemeToggle />
-          </div>
-
           <div className="md:hidden flex items-center gap-2">
-            <ThemeToggle />
             <button
               className="inline-flex items-center justify-center w-11 h-11 rounded-full border border-[color:var(--hairline-strong)] text-[color:var(--plum-ink)] hover:bg-[color:var(--ivory-2)] transition-colors"
               onClick={() => setOpen((s) => !s)}
