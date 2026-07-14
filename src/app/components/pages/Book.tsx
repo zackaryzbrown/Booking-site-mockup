@@ -2,8 +2,8 @@ import { ArrowUpRight, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { useEffect } from "react";
 import { Link } from "react-router";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
-import jennyImage from "../../../assets/7C9125AF-6B74-4A26-9E52-A5A5FD54BF23 2.jpeg";
-import courtneyImage from "../../../assets/3R7A9716_1253.JPG";
+import jennyImage from "../../../assets/jenny.jpeg";
+import courtneyImage from "../../../assets/courtney.jpg";
 
 const providers = [
   {

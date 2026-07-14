@@ -1,8 +1,8 @@
 import { Link } from "react-router";
 import { ArrowUpRight, GraduationCap, MapPin, Sparkles } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
-import jennyImage from "../../../assets/7C9125AF-6B74-4A26-9E52-A5A5FD54BF23 2.jpeg";
-import courtneyImage from "../../../assets/3R7A9716_1253.JPG";
+import jennyImage from "../../../assets/jenny.jpeg";
+import courtneyImage from "../../../assets/courtney.jpg";
 
 const values = [
   {
