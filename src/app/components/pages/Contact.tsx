@@ -7,6 +7,8 @@ import {
   ShieldCheck,
   ChevronDown,
 } from "lucide-react";
+import { usePageMeta } from "../../utils/usePageMeta";
+import { ContactForm } from "../forms/ContactForm";
 
 const BOOKING_URL = "https://achildsperspective-jm.clientsecure.me/";
 
@@ -34,19 +36,14 @@ const faqs = [
 ];
 
 export function Contact() {
-  const [openIdx, setOpenIdx] = useState<number | null>(0);
-  const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    relation: "",
-    message: "",
+  usePageMeta({
+    title: "Contact & FAQ",
+    description:
+      "Reach out to A Child's Perspective. Email help@achildsperspective.com or send a note — we read every message and reply within two business days.",
+    path: "/contact",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
     <div className="overflow-x-clip">
@@ -221,89 +218,7 @@ export function Contact() {
           </div>
 
           <div className="lg:col-span-7">
-            {submitted ? (
-              <div className="warm-card p-10 text-center">
-                <h3 className="font-display text-[1.6rem]">
-                  Thank you, your message is on its way.
-                </h3>
-                <p className="mt-3 text-[color:var(--ink-soft)]">
-                  We&apos;ll be in touch within two business days. If your
-                  family needs urgent medical attention, please call 911 or
-                  contact your medical provider.
-                </p>
-              </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit}
-                className="warm-card p-8 sm:p-10 space-y-5"
-              >
-                <Field label="Your name" id="name">
-                  <input
-                    id="name"
-                    type="text"
-                    required
-                    autoComplete="name"
-                    value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="contact-input"
-                    aria-required="true"
-                  />
-                </Field>
-                <Field label="Email" id="email">
-                  <input
-                    id="email"
-                    type="email"
-                    required
-                    autoComplete="email"
-                    value={form.email}
-                    onChange={(e) =>
-                      setForm({ ...form, email: e.target.value })
-                    }
-                    className="contact-input"
-                    aria-required="true"
-                  />
-                </Field>
-                <Field
-                  label="Relationship to the child"
-                  id="relation"
-                  hint="Optional, e.g. parent, grandparent, teen self"
-                >
-                  <input
-                    id="relation"
-                    type="text"
-                    value={form.relation}
-                    onChange={(e) =>
-                      setForm({ ...form, relation: e.target.value })
-                    }
-                    className="contact-input"
-                  />
-                </Field>
-                <Field label="What's on your mind?" id="message">
-                  <textarea
-                    id="message"
-                    required
-                    rows={5}
-                    value={form.message}
-                    onChange={(e) =>
-                      setForm({ ...form, message: e.target.value })
-                    }
-                    className="contact-input resize-none"
-                  />
-                </Field>
-                <button
-                  type="submit"
-                  className="pill-btn pill-btn--primary w-full sm:w-auto"
-                >
-                  Send message
-                  <ArrowUpRight className="w-4 h-4" />
-                </button>
-                <p className="text-[0.78rem] text-[color:var(--ink-soft)]/80">
-                  Please don&apos;t share sensitive medical details here. Once
-                  we&apos;re working together, we&apos;ll move to our secure
-                  portal.
-                </p>
-              </form>
-            )}
+            <ContactForm />
           </div>
         </div>
       </section>
@@ -357,54 +272,6 @@ export function Contact() {
           </div>
         </div>
       </section>
-
-      <style>{`
-        .contact-input {
-          width: 100%;
-          background: var(--input-background);
-          border: 1px solid var(--hairline);
-          border-radius: 14px;
-          padding: 0.85rem 1rem;
-          color: var(--ink);
-          font-family: var(--font-body);
-          font-size: 1rem;
-          transition: border-color 200ms, box-shadow 200ms;
-        }
-        .contact-input:focus {
-          outline: none;
-          border-color: var(--plum);
-          box-shadow: 0 0 0 4px rgba(74,30,58,0.12);
-        }
-      `}</style>
-    </div>
-  );
-}
-
-function Field({
-  label,
-  id,
-  hint,
-  children,
-}: {
-  label: string;
-  id: string;
-  hint?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="flex flex-col gap-2">
-      <label
-        htmlFor={id}
-        className="text-[0.85rem] font-medium text-[color:var(--plum-ink)]"
-      >
-        {label}
-        {hint && (
-          <span className="ml-2 text-[color:var(--ink-soft)]/70 font-normal">
-            {hint}
-          </span>
-        )}
-      </label>
-      {children}
     </div>
   );
 }

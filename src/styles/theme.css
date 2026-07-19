@@ -569,3 +569,27 @@
 .prose-width-wide {
   max-width: 80ch;
 }
+
+/* Contact form inputs */
+.contact-input {
+  width: 100%;
+  background: var(--input-background);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color 200ms, box-shadow 200ms;
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: var(--plum);
+  box-shadow: 0 0 0 4px rgba(74, 30, 58, 0.12);
+}
+
+.contact-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

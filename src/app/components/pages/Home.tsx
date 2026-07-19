@@ -11,6 +11,11 @@ import {
   MapPin,
   ShieldCheck,
 } from "lucide-react";
+import { ImageWithFallback } from "../figma/ImageWithFallback";
+import { usePageMeta } from "../../utils/usePageMeta";
+import jennyImage from "../../../assets/jenny.jpeg";
+import courtneyImage from "../../../assets/courtney.jpg";
+import logoImage from "../../../assets/Logo.png";
 
 const trust = [
   { icon: GraduationCap, label: "Certified Child Life Specialists" },
@@ -64,6 +69,13 @@ const servicesPreview = [
 ];
 
 export function Home() {
+  usePageMeta({
+    title: "A Child's Perspective — Child Life Support for Colorado Families",
+    description:
+      "Boutique child life support for children, teens, siblings, and caregivers navigating medical experiences. Telehealth available, serving Colorado families.",
+    path: "/",
+  });
+
   return (
     <div className="overflow-x-clip">
       {/* HERO */}
@@ -317,20 +329,20 @@ export function Home() {
               </div>
             </div>
             <div className="lg:col-span-7 order-1 lg:order-2">
-              <div className="grid grid-cols-2 gap-5">
+              <div className="grid grid-cols-2 gap-4 sm:gap-5 max-w-[520px] mx-auto lg:max-w-none">
                 <PortraitCard
                   name="Jenny"
                   role="CCLS · Co-founder"
-                  initials="J"
+                  image={jennyImage}
                   hue="var(--mauve-soft)"
-                  tilt="-3deg"
+                  tilt="-2.5deg"
                 />
                 <PortraitCard
                   name="Courtney"
-                  role="CCLS, M.S. · Co-founder"
-                  initials="C"
+                  role="CCLS, M.Ed. · Co-founder"
+                  image={courtneyImage}
                   hue="var(--sage-soft)"
-                  tilt="3deg"
+                  tilt="2.5deg"
                   offset
                 />
               </div>
@@ -406,41 +418,74 @@ function HeroVisual() {
     <div className="relative aspect-[4/5] max-w-[460px] mx-auto">
       {/* large rounded plum card */}
       <div className="absolute inset-0 rounded-[2.5rem] bg-[color:var(--plum)] shadow-[var(--shadow-warm-lg)] overflow-hidden">
+        {/* Decorative background layers */}
         <svg
           viewBox="0 0 400 500"
           className="absolute inset-0 w-full h-full"
+          preserveAspectRatio="xMidYMid slice"
           aria-hidden
         >
           <defs>
-            <radialGradient id="glow" cx="30%" cy="20%" r="80%">
+            <radialGradient id="hero-glow" cx="30%" cy="20%" r="80%">
               <stop offset="0%" stopColor="#B98099" stopOpacity="0.55" />
               <stop offset="60%" stopColor="#4A1E3A" stopOpacity="0" />
             </radialGradient>
-            <linearGradient id="ribbon" x1="0" y1="0" x2="1" y2="1">
+            <linearGradient id="hero-ribbon" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stopColor="#D9B7C4" />
               <stop offset="100%" stopColor="#A9B89A" />
             </linearGradient>
           </defs>
-          <rect width="400" height="500" fill="url(#glow)" />
+          <rect width="400" height="500" fill="url(#hero-glow)" />
+
+          {/* Gentle guide-path — echoes a kite string, not the kite itself */}
           <path
-            d="M -30 360 C 90 300, 180 420, 300 340 S 460 340, 460 240"
-            stroke="url(#ribbon)"
-            strokeWidth="40"
+            d="M 320 150 Q 260 260, 200 300 T 60 430"
+            stroke="#FBF6EE"
+            strokeOpacity="0.35"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeDasharray="2 6"
+            fill="none"
+          />
+          <path
+            d="M -30 380 C 90 320, 180 430, 300 360 S 460 360, 460 260"
+            stroke="url(#hero-ribbon)"
+            strokeWidth="34"
             strokeLinecap="round"
             fill="none"
-            opacity="0.85"
+            opacity="0.75"
           />
-          <circle cx="320" cy="120" r="46" fill="#FBF6EE" opacity="0.95" />
+
+          {/* Soft ivory disc behind the kite, gives it a paper glow */}
+          <circle cx="270" cy="150" r="86" fill="#FBF6EE" opacity="0.18" />
           <circle
-            cx="320"
-            cy="120"
-            r="46"
+            cx="270"
+            cy="150"
+            r="86"
             fill="none"
             stroke="#FBF6EE"
-            strokeOpacity="0.4"
-            strokeWidth="14"
+            strokeOpacity="0.28"
+            strokeWidth="1"
           />
         </svg>
+
+        {/* Approved kite logo — intact focal element */}
+        <img
+          src={logoImage}
+          alt=""
+          role="presentation"
+          width={172}
+          height={172}
+          className="absolute pointer-events-none select-none"
+          style={{
+            top: "10%",
+            right: "12%",
+            width: "38%",
+            height: "auto",
+            aspectRatio: "1 / 1",
+            filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.18))",
+          }}
+        />
 
         {/* editorial quote */}
         <div className="absolute inset-0 flex flex-col justify-end p-8">
@@ -450,7 +495,8 @@ function HeroVisual() {
               fontVariationSettings: '"opsz" 144, "SOFT" 100, "WONK" 1',
             }}
           >
-            “The smallest hands deserve the most thoughtful preparation.”
+            &ldquo;The smallest hands deserve the most thoughtful
+            preparation.&rdquo;
           </p>
           <p className="mt-4 eyebrow text-[color:var(--mauve-soft)]">
             our practice philosophy
@@ -489,58 +535,51 @@ function HeroVisual() {
 function PortraitCard({
   name,
   role,
-  initials,
+  image,
   hue,
   tilt,
   offset,
 }: {
   name: string;
   role: string;
-  initials: string;
+  image: string;
   hue: string;
   tilt: string;
   offset?: boolean;
 }) {
   return (
     <div
-      className={`relative aspect-[3/4] rounded-[1.75rem] overflow-hidden border border-[color:var(--hairline)] shadow-[var(--shadow-warm)] ${
-        offset ? "translate-y-8" : ""
-      }`}
+      className="relative aspect-[3/4] rounded-[1.75rem] overflow-hidden border border-[color:var(--hairline)] shadow-[var(--shadow-warm)] bg-[color:var(--ivory-2)]"
       style={{
         background: hue,
         transform: `rotate(${tilt}) ${offset ? "translateY(2rem)" : ""}`,
       }}
     >
-      <svg
-        viewBox="0 0 300 400"
-        className="absolute inset-0 w-full h-full"
+      <ImageWithFallback
+        src={image}
+        alt={`${name}, Certified Child Life Specialist`}
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ objectPosition: "center 25%" }}
+        loading="lazy"
+        width="600"
+        height="800"
+      />
+
+      {/* Soft gradient scrim so the caption stays legible */}
+      <div
         aria-hidden
-      >
-        <defs>
-          <radialGradient id={`p-${initials}`} cx="50%" cy="30%" r="70%">
-            <stop offset="0%" stopColor="#FBF6EE" stopOpacity="0.75" />
-            <stop offset="100%" stopColor="#FBF6EE" stopOpacity="0" />
-          </radialGradient>
-        </defs>
-        <rect width="300" height="400" fill={`url(#p-${initials})`} />
-        <circle cx="150" cy="160" r="60" fill="#FBF6EE" opacity="0.55" />
-        <path
-          d="M50 360 C 100 280, 200 280, 250 360 Z"
-          fill="#FBF6EE"
-          opacity="0.5"
-        />
-      </svg>
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-        <span
-          className="font-display text-[6rem] leading-none italic text-[color:var(--plum)]"
-          style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100, "WONK" 1' }}
-        >
-          {initials}
-        </span>
-      </div>
-      <div className="absolute left-4 right-4 bottom-4 paper rounded-xl px-4 py-3 border border-[color:var(--hairline)]">
-        <p className="font-display text-[1.1rem] leading-none">{name}</p>
-        <p className="eyebrow text-[0.65rem] mt-1.5">{role}</p>
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(42,19,32,0.55) 0%, rgba(42,19,32,0.15) 35%, rgba(42,19,32,0) 60%)",
+        }}
+      />
+
+      <div className="absolute left-3 right-3 sm:left-4 sm:right-4 bottom-3 sm:bottom-4 paper rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 border border-[color:var(--hairline)]">
+        <p className="font-display text-[1.05rem] sm:text-[1.1rem] leading-none">
+          {name}
+        </p>
+        <p className="eyebrow text-[0.6rem] sm:text-[0.65rem] mt-1.5">{role}</p>
       </div>
     </div>
   );
