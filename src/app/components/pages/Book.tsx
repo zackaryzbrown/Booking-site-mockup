@@ -1,7 +1,7 @@
 import { ArrowUpRight, ShieldCheck, CheckCircle2 } from "lucide-react";
-import { useEffect } from "react";
 import { Link } from "react-router";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
+import { usePageMeta } from "../../utils/usePageMeta";
 import jennyImage from "../../../assets/jenny.jpeg";
 import courtneyImage from "../../../assets/courtney.jpg";
 
@@ -53,16 +53,12 @@ const steps = [
 ];
 
 export function Book() {
-  useEffect(() => {
-    document.title = "Request an Appointment | A Child's Perspective";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        "content",
-        "Choose a provider and securely request an appointment with A Child's Perspective through SimplePractice.",
-      );
-    }
-  }, []);
+  usePageMeta({
+    title: "Request an Appointment",
+    description:
+      "Choose a provider and securely request an appointment with A Child's Perspective through our SimplePractice client portal.",
+    path: "/book",
+  });
 
   return (
     <div className="overflow-x-clip">

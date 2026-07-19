@@ -11,6 +11,7 @@ import {
   HandHeart,
   Users,
 } from "lucide-react";
+import { usePageMeta } from "../../utils/usePageMeta";
 
 const BOOKING_URL = "https://achildsperspective-jm.clientsecure.me/";
 
@@ -93,6 +94,13 @@ const fees = [
 ];
 
 export function Services() {
+  usePageMeta({
+    title: "Services & Fees",
+    description:
+      "Support areas offered by A Child's Perspective: medical preparation, coping plans, grief and anticipatory grief, sibling and caregiver support, and a free 15-minute intro call.",
+    path: "/services",
+  });
+
   return (
     <div className="overflow-x-clip">
       {/* HERO */}

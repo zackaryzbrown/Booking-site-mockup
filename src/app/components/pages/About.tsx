@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { ArrowUpRight, GraduationCap, MapPin, Sparkles } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
+import { usePageMeta } from "../../utils/usePageMeta";
 import jennyImage from "../../../assets/jenny.jpeg";
 import courtneyImage from "../../../assets/courtney.jpg";
 
@@ -25,7 +26,6 @@ const values = [
 
 const founders = [
   {
-    initials: "J",
     name: "Jenny",
     role: "Certified Child Life Specialist · Co-founder",
     hue: "var(--mauve-soft)",
@@ -44,7 +44,6 @@ const founders = [
     ],
   },
   {
-    initials: "C",
     name: "Courtney",
     role: "Certified Child Life Specialist, M.Ed. · Co-founder",
     hue: "var(--sage-soft)",
@@ -65,6 +64,13 @@ const founders = [
 ];
 
 export function About() {
+  usePageMeta({
+    title: "About Jenny & Courtney",
+    description:
+      "Meet the Certified Child Life Specialists behind A Child's Perspective — a boutique practice built to give families unhurried, human support through medical experiences.",
+    path: "/about",
+  });
+
   return (
     <div className="overflow-x-clip">
       {/* HERO */}

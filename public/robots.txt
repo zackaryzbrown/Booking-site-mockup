@@ -1,0 +1,11 @@
+# A Child's Perspective — Production robots
+User-agent: *
+Allow: /
+
+# Disallow SPA/service worker artifacts and PWA manifest URLs that
+# should not be indexed as pages.
+Disallow: /sw.js
+Disallow: /workbox-*.js
+Disallow: /manifest.webmanifest
+
+Sitemap: https://a-childs-perspective.com/sitemap.xml
