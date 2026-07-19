@@ -28,7 +28,6 @@ import {
  */
 
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
-const HCAPTCHA_SITEKEY = "50b2fe65-b00b-4b9e-ad62-3ba471098be2"; // Web3Forms free plan default
 
 type FormData = {
   name: string;
@@ -42,6 +41,9 @@ type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export function ContactForm() {
   const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+  const hcaptchaSiteKey =
+    import.meta.env.VITE_HCAPTCHA_SITEKEY ||
+    "50b2fe65-b00b-4b9e-ad62-3ba471098be2";
   const isDevelopment = import.meta.env.DEV;
 
   const {
@@ -403,7 +405,7 @@ export function ContactForm() {
       <div className="flex flex-col gap-2">
         <HCaptcha
           ref={captchaRef}
-          sitekey={HCAPTCHA_SITEKEY}
+          sitekey={hcaptchaSiteKey}
           onVerify={(token) => setCaptchaToken(token)}
           onExpire={() => setCaptchaToken("")}
           onError={() => setCaptchaToken("")}

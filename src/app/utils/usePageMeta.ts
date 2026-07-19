@@ -1,11 +1,15 @@
 import { useEffect } from "react";
 
 /**
- * Production origin used for canonical URLs and Open Graph metadata.
- * Kept in one place so preview/local builds don't accidentally emit
- * the wrong canonical.
+ * Site origin for canonical URLs and Open Graph metadata.
+ * Uses VITE_SITE_ORIGIN from environment, or falls back to current origin
+ * for preview/local builds (preventing misleading canonicals on non-production domains).
  */
-export const SITE_ORIGIN = "https://a-childs-perspective.com";
+export const SITE_ORIGIN =
+  import.meta.env.VITE_SITE_ORIGIN ||
+  (typeof window !== "undefined"
+    ? window.location.origin
+    : "https://a-childs-perspective.com");
 export const SITE_NAME = "A Child's Perspective";
 
 export type PageMeta = {
